@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, easeOut } from 'framer-motion'
 import Logo from './Logo'
 import { FOOTER_LINKS } from '../data/constants'
 
@@ -19,7 +19,7 @@ const fadeUp = (delay = 0) => ({
     transition: {
       duration: 0.8,
       delay,
-      ease: [0.16, 1, 0.3, 1],
+      ease: easeOut,
     },
   },
 })
@@ -39,7 +39,7 @@ const column = (delay = 0) => ({
     transition: {
       duration: 0.85,
       delay,
-      ease: [0.16, 1, 0.3, 1],
+      ease: easeOut,
     },
   },
 })

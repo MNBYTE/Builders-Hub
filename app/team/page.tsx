@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, cubicBezier } from 'framer-motion'
 import Nav    from '../components/Nav'
 import Footer from '../components/Footer'
 import { TEAM } from '../data/constants'
@@ -9,11 +9,13 @@ import { ArrowUpRight, CodeXml, Mail, MessageCircle, ScanFace, Search, Sparkles,
 
 
 /* ── Animation helpers ──────────────────────────────────────────────── */
+const easeCustom = cubicBezier(0.16, 1, 0.3, 1)
+
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 36, filter: 'blur(10px)' },
   show: {
     opacity: 1, y: 0, filter: 'blur(0px)',
-    transition: { duration: 0.85, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.85, delay, ease: easeCustom },
   },
 })
 
@@ -21,7 +23,7 @@ const fadeIn = (delay = 0) => ({
   hidden: { opacity: 0, filter: 'blur(8px)' },
   show: {
     opacity: 1, filter: 'blur(0px)',
-    transition: { duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.75, delay, ease: easeCustom },
   },
 })
 
@@ -29,7 +31,7 @@ const slideLeft = (delay = 0) => ({
   hidden: { opacity: 0, x: -28, filter: 'blur(8px)' },
   show: {
     opacity: 1, x: 0, filter: 'blur(0px)',
-    transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.8, delay, ease: easeCustom },
   },
 })
 
@@ -37,7 +39,7 @@ const cardVariant = (delay = 0) => ({
   hidden: { opacity: 0, y: 52, filter: 'blur(12px)', scale: 0.97 },
   show: {
     opacity: 1, y: 0, filter: 'blur(0px)', scale: 1,
-    transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.9, delay, ease: easeCustom },
   },
 })
 
@@ -300,7 +302,7 @@ export default function TeamClient() {
               initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.9, delay: 0.1, ease: easeCustom }}
             >
               <p className="font-display font-black text-blue mb-5 select-none" style={{ fontSize: '3rem' }}>
                 &ldquo;
@@ -356,7 +358,7 @@ export default function TeamClient() {
                 <motion.h2
                   initial={{ opacity:0, y:18, filter:'blur(8px)' }}
                   animate={hiringInView ? { opacity:1, y:0, filter:'blur(0px)' } : {}}
-                  transition={{ duration:0.85, delay:0.38, ease:[0.16,1,0.3,1] }}
+                  transition={{ duration:0.85, delay:0.38, ease: easeCustom }}
                   className="font-display font-black tracking-tightest text-white leading-[1.0] mb-4"
                   style={{ fontSize: 'clamp(2rem,4vw,3rem)' }}
                 >
@@ -377,7 +379,7 @@ export default function TeamClient() {
               <motion.div
                 initial={{ opacity:0, x:20, filter:'blur(8px)' }}
                 animate={hiringInView ? { opacity:1, x:0, filter:'blur(0px)' } : {}}
-                transition={{ duration:0.8, delay:0.55, ease:[0.16,1,0.3,1] }}
+                transition={{ duration:0.8, delay:0.55, ease: easeCustom }}
                 className="flex flex-col items-start lg:items-end gap-4 flex-shrink-0"
               >
                 <a

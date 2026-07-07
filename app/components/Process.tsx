@@ -1,14 +1,14 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, cubicBezier } from 'framer-motion'
 import { STEPS } from '../data/constants'
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
   show:   {
     opacity: 1, y: 0, filter: 'blur(0px)',
-    transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.8, delay, ease: cubicBezier(0.16, 1, 0.3, 1) },
   },
 })
 
@@ -16,7 +16,7 @@ const cardVariant = (delay = 0) => ({
   hidden: { opacity: 0, y: 56, filter: 'blur(12px)', scale: 0.97 },
   show:   {
     opacity: 1, y: 0, filter: 'blur(0px)', scale: 1,
-    transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.9, delay, ease: cubicBezier(0.16, 1, 0.3, 1) },
   },
 })
 
@@ -92,7 +92,7 @@ export default function Process() {
                 <motion.div
                   initial={{ scaleX: 0, opacity: 0 }}
                   animate={inView ? { scaleX: 1, opacity: 1 } : {}}
-                  transition={{ duration: 0.6, delay: 0.85 + i * 0.18, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.6, delay: 0.85 + i * 0.18, ease: cubicBezier(0.16, 1, 0.3, 1) }}
                   style={{ transformOrigin: 'left' }}
                   className="hidden md:block absolute top-[4.5rem] -right-[8px] w-4 h-px bg-edge z-10"
                 />
@@ -119,7 +119,7 @@ export default function Process() {
               <motion.h3
                 initial={{ opacity: 0, x: -10, filter: 'blur(6px)' }}
                 animate={inView ? { opacity: 1, x: 0, filter: 'blur(0px)' } : {}}
-                transition={{ duration: 0.7, delay: 0.6 + i * 0.18, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.7, delay: 0.6 + i * 0.18, ease: cubicBezier(0.16, 1, 0.3, 1) }}
                 className={`font-display font-black text-2xl tracking-tight -mt-3 mb-4 ${
                   step.highlighted ? 'text-white' : 'text-body'
                 }`}
@@ -131,7 +131,7 @@ export default function Process() {
               <motion.p
                 initial={{ opacity: 0, filter: 'blur(6px)' }}
                 animate={inView ? { opacity: 1, filter: 'blur(0px)' } : {}}
-                transition={{ duration: 0.75, delay: 0.72 + i * 0.18, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.75, delay: 0.72 + i * 0.18, ease: cubicBezier(0.16, 1, 0.3, 1) }}
                 className={`font-body text-[14px] leading-[1.8] flex-1 ${
                   step.highlighted ? 'text-white/65' : 'text-muted'
                 }`}
@@ -145,7 +145,7 @@ export default function Process() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
                   animate={inView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-                  transition={{ duration: 0.55, delay: 0.95, ease: [0.34, 1.56, 0.64, 1] }}
+                  transition={{ duration: 0.55, delay: 0.95, ease: cubicBezier(0.34, 1.56, 0.64, 1) }}
                   className="absolute top-6 right-6 w-9 h-9 bg-gold rounded-full flex items-center justify-center text-lg shadow-md"
                 >
                   ⚡

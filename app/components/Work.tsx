@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, cubicBezier } from 'framer-motion'
 import { PROJECTS } from '../data/constants'
 
 const fadeUp = (delay = 0) => ({
@@ -19,7 +19,7 @@ const fadeUp = (delay = 0) => ({
     transition: {
       duration: 0.75,
       delay,
-      ease: [0.16, 1, 0.3, 1],
+      ease: cubicBezier(0.16, 1, 0.3, 1),
     },
   },
 })
@@ -39,7 +39,7 @@ const cardVariant = (delay = 0) => ({
     transition: {
       duration: 0.85,
       delay,
-      ease: [0.16, 1, 0.3, 1],
+      ease: cubicBezier(0.16, 1, 0.3, 1),
     },
   },
 })
@@ -83,7 +83,7 @@ export default function Work() {
                 fontSize: 'clamp(2rem,5vw,3rem)',
               }}
             >
-              Products we've
+              Products we&apos;ve
               <br />
               shipped.
             </motion.h2>

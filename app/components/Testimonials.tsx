@@ -5,6 +5,7 @@ import {
   motion,
   AnimatePresence,
   useInView,
+  easeInOut,
 } from 'framer-motion'
 import { TESTIMONIALS } from '../data/constants'
 
@@ -21,7 +22,7 @@ const fadeUp = (delay = 0) => ({
     transition: {
       duration: 0.8,
       delay,
-      ease: [0.16, 1, 0.3, 1],
+      ease: easeInOut,
     },
   },
 })
@@ -94,7 +95,7 @@ export default function Testimonials() {
               }}
               transition={{
                 duration: 0.55,
-                ease: [0.16, 1, 0.3, 1],
+                ease: easeInOut,
               }}
             >
               <p
@@ -120,7 +121,7 @@ export default function Testimonials() {
                   transition={{
                     duration: 0.45,
                     delay: 0.1,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: easeInOut,
                   }}
                   className="w-14 h-14 rounded-full bg-blue text-white font-display font-bold text-sm flex items-center justify-center mb-3 shadow-lg"
                 >

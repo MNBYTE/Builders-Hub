@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, cubicBezier } from 'framer-motion'
 import { SERVICES, type Service } from '../data/constants'
 
 /* ──────────────────────────────────────────────────────────────
@@ -21,7 +21,7 @@ const fadeUp = (delay = 0) => ({
     transition: {
       duration: 0.75,
       delay,
-      ease: [0.16, 1, 0.3, 1],
+      ease: cubicBezier(0.16, 1, 0.3, 1),
     },
   },
 })
@@ -41,7 +41,7 @@ const cardVariant = (delay = 0) => ({
     transition: {
       duration: 0.82,
       delay,
-      ease: [0.16, 1, 0.3, 1],
+      ease: cubicBezier(0.16, 1, 0.3, 1),
     },
   },
 })
@@ -59,7 +59,7 @@ const iconVariant = (delay = 0) => ({
     transition: {
       duration: 0.9,
       delay,
-      ease: [0.16, 1, 0.3, 1],
+      ease: cubicBezier(0.16, 1, 0.3, 1),
     },
   },
 })
@@ -77,7 +77,7 @@ const ctaVariant = (delay = 0) => ({
     transition: {
       duration: 0.6,
       delay,
-      ease: [0.16, 1, 0.3, 1],
+      ease: cubicBezier(0.16, 1, 0.3, 1),
     },
   },
 })

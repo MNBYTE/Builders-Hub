@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, easeInOut } from 'framer-motion'
 import Nav          from '../components/Nav'
 import Footer       from '../components/Footer'
 import ContactForm  from '../components/ContactForm'
@@ -12,7 +12,7 @@ const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 36, filter: 'blur(10px)' },
   show: {
     opacity: 1, y: 0, filter: 'blur(0px)',
-    transition: { duration: 0.85, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.85, delay, ease: easeInOut },
   },
 })
 
@@ -20,7 +20,7 @@ const fadeIn = (delay = 0) => ({
   hidden: { opacity: 0, filter: 'blur(8px)' },
   show: {
     opacity: 1, filter: 'blur(0px)',
-    transition: { duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.75, delay, ease: easeInOut },
   },
 })
 
@@ -28,7 +28,7 @@ const slideLeft = (delay = 0) => ({
   hidden: { opacity: 0, x: -24, filter: 'blur(8px)' },
   show: {
     opacity: 1, x: 0, filter: 'blur(0px)',
-    transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.8, delay, ease: easeInOut },
   },
 })
 
@@ -36,7 +36,7 @@ const slideRight = (delay = 0) => ({
   hidden: { opacity: 0, x: 24, filter: 'blur(8px)' },
   show: {
     opacity: 1, x: 0, filter: 'blur(0px)',
-    transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.8, delay, ease: easeInOut },
   },
 })
 

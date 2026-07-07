@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, cubicBezier } from 'framer-motion'
 import Link from 'next/link'
 import Nav    from '../components/Nav'
 import Footer from '../components/Footer'
@@ -13,7 +13,7 @@ const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 36, filter: 'blur(10px)' },
   show:   {
     opacity: 1, y: 0, filter: 'blur(0px)',
-    transition: { duration: 0.85, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.85, delay, ease: cubicBezier(0.16, 1, 0.3, 1) },
   },
 })
 
@@ -21,7 +21,7 @@ const cardVariant = (delay = 0) => ({
   hidden: { opacity: 0, y: 48, filter: 'blur(12px)', scale: 0.975 },
   show:   {
     opacity: 1, y: 0, filter: 'blur(0px)', scale: 1,
-    transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.9, delay, ease: cubicBezier(0.16, 1, 0.3, 1) },
   },
 })
 

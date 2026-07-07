@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, easeInOut } from 'framer-motion'
 
 const container = {
   hidden: {
@@ -17,7 +17,7 @@ const container = {
     filter: 'blur(0px)',
     transition: {
       duration: 0.9,
-      ease: [0.16, 1, 0.3, 1],
+      ease: easeInOut,
       when: 'beforeChildren',
       staggerChildren: 0.12,
     },
@@ -36,7 +36,7 @@ const fadeUp = {
     filter: 'blur(0px)',
     transition: {
       duration: 0.75,
-      ease: [0.16, 1, 0.3, 1],
+      ease: easeInOut,
     },
   },
 }
@@ -55,7 +55,7 @@ const button = {
     filter: 'blur(0px)',
     transition: {
       duration: 0.65,
-      ease: [0.34, 1.56, 0.64, 1],
+      ease: easeInOut,
     },
   },
 }
