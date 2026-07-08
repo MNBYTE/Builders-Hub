@@ -48,7 +48,7 @@ const CONTACT_INFO = [
 ]
 
 const PROMISES = [
-  'We read every message personally — zero auto-responders.',
+  'We read every message personally, zero auto-responders.',
   'Honest feedback, even if we\'re not the right fit for you.',
   'Discovery calls are always free and never a hard sell.',
   'Engagements start at $2,000 depending on scope and timeline.',
@@ -61,7 +61,7 @@ const FAQS = [
   },
   {
     q: 'Do you work with early-stage startups?',
-    a: 'Yes — some of our best work has been with founders at the idea stage. We help shape the product, not just build it.',
+    a: 'Yes, some of our best work has been with founders at the idea stage. We help shape the product, not just build it.',
   },
   {
     q: 'What does the process look like after I reach out?',

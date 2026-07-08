@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useRef } from 'react'
 import { motion, useInView, cubicBezier } from 'framer-motion'
 import { SERVICES, type Service } from '../data/constants'
@@ -258,9 +259,9 @@ function BentoCard({
             animate={inView ? 'show' : 'hidden'}
             className="pt-6"
           >
-            <div className="inline-flex items-center gap-2 bg-gold text-ink font-body font-bold text-xs px-4 py-2 rounded-pill cursor-pointer hover:scale-105 transition-transform duration-300">
+            <Link href="/projects" className="inline-flex items-center gap-2 bg-gold text-ink font-body font-bold text-xs px-4 py-2 rounded-pill cursor-pointer hover:scale-105 transition-transform duration-300">
               Explore service →
-            </div>
+            </Link>
           </motion.div>
         )}
       </div>
@@ -340,7 +341,7 @@ export default function ServicesBento() {
             animate={inView ? 'show' : 'hidden'}
             className="font-body text-muted text-sm leading-relaxed max-w-[320px]"
           >
-            End-to-end digital solutions—from product strategy and brand
+            End-to-end digital solutions from product strategy and brand
             identity to design, engineering, launch, and long-term growth.
           </motion.p>
 

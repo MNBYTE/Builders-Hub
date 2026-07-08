@@ -10,7 +10,7 @@ export default function Logo({ inverted = false }: { inverted?: boolean }) {
       {/* Logo image */}
       <div className="relative w-9 h-9 flex-shrink-0">
         <Image
-          src="/imgs/logo.png"
+          src="/imgs/logobuilder.png"
           alt="Builders Hub logo"
           fill
           className="object-contain"

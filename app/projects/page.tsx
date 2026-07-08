@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 import { PROJECTS } from '../data/constants'
 import { ArrowUpRight } from 'lucide-react'
 
-/* ── Animation helpers ──────────────────────────────────────────────── */
+/* ── Animation helpers ─ */
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 36, filter: 'blur(10px)' },
   show:   {
@@ -142,12 +142,29 @@ function ProjectCard({ project, index, inView }: {
               </span>
             ))}
           </div>
-          <Link
-            href={`/projects/${project.slug}`}
-            className="flex-shrink-0 font-body font-semibold text-[12px] text-blue hover:text-blue-dark flex items-center gap-1 transition-colors"
-          >
-            View <ArrowUpRight size={12} />
-          </Link>
+
+
+          {/* Card arrow — top right of preview */}
+            <a  href={project.slug}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute top-4 right-4 w-8 h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white/50 hover:bg-white hover:text-ink transition-all duration-200"
+              aria-label={`Visit ${project.name}`}
+            >
+              <ArrowUpRight size={14} />
+            </a>
+
+            {/* Card bottom "View →" link */}
+
+            <a  href={project.slug}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 font-body font-semibold text-[12px] text-blue hover:text-blue-dark flex items-center gap-1 transition-colors"
+            >
+              View <ArrowUpRight size={12} />
+            </a>
+
+
         </div>
       </div>
     </motion.article>

@@ -185,34 +185,23 @@ export default function Work() {
                   </motion.p>
                 </div>
 
-                <Link href={`/projects/${project.slug}`}>
-                  <motion.div
-                    initial={{
-                      opacity: 0,
-                      scale: 0.7,
-                      rotate: -15,
-                    }}
-                    animate={
-                      inView
-                        ? {
-                            opacity: 1,
-                            scale: 1,
-                            rotate: 0,
-                          }
-                        : {}
-                    }
-                    transition={{
-                      duration: 0.45,
-                      delay: 0.72 + i * 0.14,
-                      ease: [0.34, 1.56, 0.64, 1],
-                    }}
-                    whileHover={{ scale: 1.08 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 hover:bg-white/20 hover:text-white transition-all duration-300 cursor-pointer"
-                  >
-                    <ArrowUpRight size={14} />
-                  </motion.div>
-                </Link>
+                {/* Arrow button — was <Link href={`/projects/${project.slug}`}> */}
+                <a href={project.slug}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${project.name}`}
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.7, rotate: -15 }}
+                  animate={inView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+                  transition={{ duration: 0.45, delay: 0.72 + i * 0.14, ease: [0.34, 1.56, 0.64, 1] }}
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 hover:bg-white/20 hover:text-white transition-all duration-300 cursor-pointer"
+                >
+                  <ArrowUpRight size={14} />
+                </motion.div>
+                </a>
 
                 <motion.span
                   initial={{

@@ -5,7 +5,7 @@ import { motion, useInView, cubicBezier } from 'framer-motion'
 import Nav    from '../components/Nav'
 import Footer from '../components/Footer'
 import { TEAM } from '../data/constants'
-import { ArrowUpRight, CodeXml, Mail, MessageCircle, ScanFace, Search, Sparkles, Target, Zap } from 'lucide-react'
+import { ArrowUpRight, Building2, CodeXml, Mail, MessageCircle, ScanFace, Search, Sparkles, Target, Zap } from 'lucide-react'
 
 
 /* ── Animation helpers ──────────────────────────────────────────────── */
@@ -189,7 +189,7 @@ export default function TeamClient() {
                   className="font-body text-white/45 text-[15px] sm:text-lg leading-relaxed max-w-[420px]"
                 >
                   Small, senior, and fully invested. Every person at Builders Hub
-                  takes ownership of what they ship — from first pixel to final deploy.
+                  takes ownership of what they ship, from first pixel to final deploy.
                 </motion.p>
               </div>
 
@@ -199,7 +199,7 @@ export default function TeamClient() {
                 className="lg:justify-self-end"
               >
                 <div className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-[300px]">
-                  <Sparkles size={20} className="text-gold mb-4" />
+                  <Building2 size={20} className="text-gold mb-4" />
                   <p className="font-display font-black text-white text-2xl tracking-tightest mb-1">
                     {TEAM.length} people.
                   </p>
@@ -252,7 +252,7 @@ export default function TeamClient() {
                   animate={valuesInView ? 'show' : 'hidden'}
                   className="flex flex-col gap-3"
                 >
-                  <span className="text-2xl">{Icon && <Icon size={24} />}</span>
+                  <span className="text-2xl">{Icon && <Icon size={24} className="text-gold mb-4"/>}</span>
                   <h3 className="font-display font-black text-[16px] text-body tracking-tight">{title}</h3>
                   <p className="font-body text-[13px] text-muted leading-relaxed">{body}</p>
                 </motion.div>
@@ -312,8 +312,8 @@ export default function TeamClient() {
                 style={{ fontSize: 'clamp(1.4rem,3vw,2rem)' }}
               >
                 We didn&apos;t build Builders Hub to be a big agency.
-                We built it to do the best work of our careers —
-                with clients who give a damn about what they&apos;re building.
+                We built it to do the best work of our careers
+                with clients who care about what they&apos;re building.
               </p>
               <div className="inline-flex items-center gap-3">
                 <div
@@ -371,7 +371,7 @@ export default function TeamClient() {
                   transition={{ duration:0.75, delay:0.5 }}
                   className="font-body text-white/40 text-[14px] leading-relaxed max-w-[380px]"
                 >
-                  We&apos;re always open to exceptional people — designers, engineers, and strategists
+                  We&apos;re always open to exceptional people, designers, engineers, and strategists
                   who obsess over craft and want to do the best work of their careers.
                 </motion.p>
               </div>

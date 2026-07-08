@@ -44,6 +44,12 @@ const column = (delay = 0) => ({
   },
 })
 
+const LEGAL_LINKS = [
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Terms', href: '/terms' },
+  { label: 'Cookies', href: '/cookies' },
+]
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
@@ -99,16 +105,26 @@ export default function Footer() {
               </h3>
 
               <ul className="flex flex-col gap-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <Link
-                      href="#"
-                      className="font-body text-[13px] text-white/35 hover:text-white transition-colors duration-200"
-                    >
-                      {link}
-                    </Link>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const external = link.href.startsWith('http')
+
+                  return (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        {...(external
+                          ? {
+                              target: '_blank',
+                              rel: 'noopener noreferrer',
+                            }
+                          : {})}
+                        className="font-body text-[13px] text-white/35 hover:text-white transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  )
+                })}
               </ul>
             </motion.div>
           ))}
@@ -127,13 +143,14 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-6">
-            {['Privacy', 'Terms', 'Cookies'].map((item) => (
+
+            {LEGAL_LINKS.map((item) => (
               <Link
-                key={item}
-                href="#"
+                key={item.label}
+                href={item.href}
                 className="font-body text-[12px] text-white/20 hover:text-white/40 transition-colors duration-200"
               >
-                {item}
+                {item.label}
               </Link>
             ))}
           </div>

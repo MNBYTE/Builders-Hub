@@ -82,7 +82,7 @@ export type Project = {
   tags:     string[]
   metric:   string
   summary:  string
-  slug:  string
+  slug:     string   // now a full external URL
 }
 
 export const PROJECTS: Project[] = [
@@ -91,49 +91,49 @@ export const PROJECTS: Project[] = [
     bg: '#0F1B3C', accent: '#F5C52C',
     tags: ['Nestjs', 'Postgres', 'Redis', 'React Native'], metric: '↑ 340% traffic',
     summary: 'A high-performance marketplace platform connecting users with local service providers in real time.',
-    slug: 'beeseek.site',
+    slug: 'https://beeseek.site',
   },
   {
     name: 'ExtraordinaryLife', type: 'WORKSPACE MANAGEMENT', year: '2024',
     bg: '#0A2A14', accent: '#4ADE80',
     tags: ['Next.js', 'TypeScript', 'Tailwind', 'Postgres', 'SQL'], metric: '↑ 2× conversion',
     summary: 'A robust workspace management hub designed to coordinate team tasks, tracking, and operations.',
-    slug: 'extraordinarylife.ng',
+    slug: 'https://extraordinarylife.ng',
   },
   {
     name: 'D_HEIR International', type: 'LOGISTICS SERVICES', year: '2023',
     bg: '#1A0A2A', accent: '#A78BFA',
     tags: ['Next.js', 'Supabase', 'TypeScript', 'Postgres'], metric: '↑ $2M ARR',
     summary: 'A seamless logistics site offering parcel tracking, route configuration, and service schedules.',
-    slug: 'dheirinternational.com',
+    slug: 'https://dheirinternational.com',
   },
   {
     name: 'Leadflow', type: 'EMAIL INFRASTRUCTURE', year: '2023',
     bg: '#0A1A2A', accent: '#38BDF8',
     tags: ['Next.js', 'Supabase', 'AWS'], metric: '↓ 60% ops cost',
     summary: 'An automated transactional email delivery engine designed for heavy workloads and high deliverability.',
-    slug: 'tryleadflow.ai',
+    slug: 'https://tryleadflow.ai',
   },
   {
     name: 'Spe UI', type: 'ACADEMIC PORTAL', year: '2023',
     bg: '#1A0A0A', accent: '#FB923C',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS'], metric: '3× more leads',
     summary: 'A modern student portal built for the petroleum engineering student body to access resources and event notices.',
-    slug: 'speui.org',
+    slug: 'https://speui.org',
   },
   {
     name: 'SignSea', type: 'ESCROW INFRASTRUCTURE', year: '2022',
     bg: '#001A1A', accent: '#d4cc2d',
-    tags: ['Next.js', 'Tailwind','Fastify','Postgres'], metric: '$5M processed',
+    tags: ['Next.js', 'Tailwind', 'Fastify', 'Postgres'], metric: '$5M processed',
     summary: 'A secure digital escrow application coordinating multi-party trade agreements and payouts.',
-    slug: 'signsea.com',
+    slug: 'https://signsea.com',
   },
   {
     name: 'TracTrac MDM Agent', type: 'MOBILE DEVICE MANAGEMENT', year: '2022',
     bg: '#001A1A', accent: '#2d43d4',
-    tags: ['React','Go','Kotlin','Java','Postgres','MinIO','MQTT','Redis'], metric: '$5M processed',
+    tags: ['React', 'Go', 'Kotlin', 'Java', 'Postgres', 'MinIO', 'MQTT', 'Redis'], metric: '$5M processed',
     summary: 'A robust mobile device agent administering remote device settings, telemetry data, and network traffic.',
-    slug: 'tractrac-mdm-agent.com',
+    slug: 'https://tractrac-mdm-agent.com',
   },
 ]
 
@@ -171,39 +171,27 @@ export type TeamMember = {
 export const TEAM: TeamMember[] = [
   {
     name: 'Divine Wisdom', role: 'Founder & CEO', initials: 'DW', color: '#1A5FFF',
-    bio: 'Serial entrepreneur with 10+ years shipping digital products for global brands. Passionate about turning ambitious ideas into scalable realities.',
+    bio: 'Serial entrepreneur with 3+ years shipping digital products for global brands. Passionate about turning ambitious ideas into scalable realities.',
     skills: ['Product Strategy', 'Business Development', 'UX'],
-    socials: { linkedin: '#', twitter: '#' },
+    socials: { linkedin: '#', twitter: '#', github: '#' },
   },
   {
-    name: 'Olakunle Fafure', role: 'Frontend Engineer', initials: 'SC', color: '#F5C52C',
-    bio: 'Award-winning designer with a background in brand identity and interactive design. Believes every pixel should earn its place.',
-    skills: ['UI/UX Design', 'Brand Identity', 'Figma'],
-    socials: { linkedin: '#', twitter: '#' },
+    name: 'Olakunle Fafure', role: 'Frontend Engineer', initials: 'OF', color: '#F5C52C',
+    bio: 'Award-winning designer with a background in seamless user experience and interactive design. Believes every pixel should earn its place.',
+    skills: ['UI/UX', 'Nextjs', 'React'],
+    socials: { linkedin: '#', twitter: '#', github: '#' },
   },
   {
-    name: 'Emmanuel Gyimah', role: 'Backend Engineer', initials: 'MW', color: '#10B981',
+    name: 'Emmanuel Gyimah', role: 'Backend Engineer', initials: 'EG', color: '#10B981',
     bio: 'Full-stack architect who has led engineering at two successful startups. Obsessed with clean code, performance, and shipping fast.',
-    skills: ['Next.js', 'Node.js', 'System Design'],
-    socials: { linkedin: '#', github: '#' },
+    skills: ['Nestjs', 'Node.js', 'System Design'],
+    socials: { linkedin: '#', twitter: '#', github: '#' },
   },
   {
-    name: 'Oluwa Brimz', role: 'Mobile Lead', initials: 'PN', color: '#A78BFA',
+    name: 'Oluwa Brimz', role: 'Mobile Lead', initials: 'OB', color: '#A78BFA',
     bio: 'React Native specialist who has shipped 12+ apps to the App Store and Play Store. Makes mobile experiences feel genuinely native.',
     skills: ['React Native', 'iOS', 'Android'],
-    socials: { linkedin: '#', github: '#' },
-  },
-  {
-    name: 'Jordan Ellis', role: 'Growth Strategist', initials: 'JE', color: '#F97316',
-    bio: 'Data-driven marketer who has grown organic traffic 5× for multiple clients. SEO, content, and paid channels are the toolkit.',
-    skills: ['SEO', 'PPC', 'Analytics'],
-    socials: { linkedin: '#', twitter: '#' },
-  },
-  {
-    name: 'Amara Osei', role: 'Project Manager', initials: 'AO', color: '#EC4899',
-    bio: 'PMP-certified PM who keeps every project on time, in scope, and on budget. The glue that holds every delivery together.',
-    skills: ['Agile', 'Scrum', 'Stakeholder Mgmt'],
-    socials: { linkedin: '#' },
+    socials: { linkedin: '#', twitter: '#', github: '#' },
   },
 ]
 
@@ -234,8 +222,37 @@ export const STACK = [
 ] as const
 
 /* ── Footer links ─────────────────────────────────────────────────── */
-export const FOOTER_LINKS: Record<string, string[]> = {
-  Company:  ['Team', 'Project'],
-  Services: ['Web Develoment', 'Mobile Apps', 'Branding', 'SEO & Growth'],
-  Connect:  ['Twitter', 'LinkedIn', 'Dribbble', 'GitHub'],
-}
+export const FOOTER_LINKS = {
+  Company: [
+    { label: 'Team', href: '/team' },
+    { label: 'Projects', href: '/projects' },
+  ],
+
+  Services: [
+    { label: 'Web Development', href: '/projects' },
+    { label: 'Mobile Apps', href: '/projects' },
+    { label: 'Branding', href: '/projects' },
+    { label: 'SEO & Growth', href: '/projects' },
+  ],
+
+  Connect: [
+    {
+      label: 'Twitter',
+      href: 'https://twitter.com/buildershub',
+    },
+    {
+      label: 'LinkedIn',
+      href: 'https://linkedin.com/company/buildershub',
+    },
+    {
+      label: 'Dribbble',
+      href: 'https://dribbble.com/buildershub',
+    },
+    {
+      label: 'GitHub',
+      href: 'https://github.com/buildershub',
+    },
+  ],
+} as const
+
+
