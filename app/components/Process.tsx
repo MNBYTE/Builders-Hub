@@ -73,7 +73,7 @@ export default function Process() {
           </motion.p>
         </div>
 
-        {/* ── Step cards ──────────────────────────────────────────── */}
+        {/* ── Step cards ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {STEPS.map((step, i) => (
             <motion.div

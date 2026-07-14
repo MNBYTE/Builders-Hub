@@ -7,7 +7,7 @@ import Footer       from '../components/Footer'
 import ContactForm  from '../components/ContactForm'
 import { Mail, MapPin, Clock, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 
-/* ── Animation helpers ──────────────────────────────────────────────── */
+/* ── Animation helpers ─── */
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 36, filter: 'blur(10px)' },
   show: {
@@ -40,7 +40,7 @@ const slideRight = (delay = 0) => ({
   },
 })
 
-/* ── Data ────────────────────────────────────────────────────────────── */
+/* ── Data ─── */
 const CONTACT_INFO = [
   { Icon: Mail,   label: 'Email us',  value: 'buildershub@gmail.com'    },
   { Icon: MapPin, label: 'Based in',  value: 'Lagos · London · Remote'  },
@@ -69,7 +69,7 @@ const FAQS = [
   },
 ]
 
-/* ── FAQ Item ────────────────────────────────────────────────────────── */
+/* ── FAQ Item ─── */
 function FaqItem({ q, a, delay, inView }: { q: string; a: string; delay: number; inView: boolean }) {
   return (
     <motion.div
@@ -84,7 +84,7 @@ function FaqItem({ q, a, delay, inView }: { q: string; a: string; delay: number;
   )
 }
 
-/* ── Page ────────────────────────────────────────────────────────────── */
+/* ── Page ─── */
 export default function ContactClient() {
   const headerRef = useRef(null)
   const bodyRef   = useRef(null)
@@ -99,7 +99,7 @@ export default function ContactClient() {
       <Nav />
       <main className="bg-base">
 
-        {/* ══ Hero header ═══════════════════════════════════════════ */}
+        {/* ══ Hero header ══════*/}
         <section className="bg-ink pt-[70px] relative overflow-hidden">
 
           {/* Background orbs */}
@@ -148,12 +148,12 @@ export default function ContactClient() {
           <div className="h-14 bg-gradient-to-b from-ink to-base" />
         </section>
 
-        {/* ══ Main body ═════════════════════════════════════════════ */}
+        {/* ══ Main body ═══ */}
         <section className="pt-10 pb-20 sm:pb-28">
           <div ref={bodyRef} className="max-w-[1240px] mx-auto px-5 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px] gap-14 lg:gap-20">
 
-              {/* ── Left column ─────────────────────────────────── */}
+              {/* ── Left column ─── */}
               <div>
 
                 {/* Promises */}
@@ -233,7 +233,7 @@ export default function ContactClient() {
 
               </div>
 
-              {/* ── Right column — form ──────────────────────────── */}
+              {/* ── Right column — form ─── */}
               <motion.div
                 variants={slideRight(0.22)}
                 initial="hidden"
@@ -246,7 +246,7 @@ export default function ContactClient() {
           </div>
         </section>
 
-        {/* ══ FAQ ═══════════════════════════════════════════════════ */}
+        {/* ══ FAQ ═════ */}
         <section className="pb-24 bg-subtle" ref={faqRef}>
           <div className="max-w-[1240px] mx-auto px-5 sm:px-8 pt-16 sm:pt-20">
 

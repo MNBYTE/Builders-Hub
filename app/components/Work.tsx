@@ -185,7 +185,7 @@ export default function Work() {
                   </motion.p>
                 </div>
 
-                {/* Arrow button — was <Link href={`/projects/${project.slug}`}> */}
+                {/* Arrow button */}
                 <a href={project.slug}
                 target="_blank"
                 rel="noopener noreferrer"

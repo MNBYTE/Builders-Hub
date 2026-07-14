@@ -5,9 +5,7 @@ import { useRef } from 'react'
 import { motion, useInView, cubicBezier } from 'framer-motion'
 import { SERVICES, type Service } from '../data/constants'
 
-/* ──────────────────────────────────────────────────────────────
-   Animation Variants
-────────────────────────────────────────────────────────────── */
+/* ─── Animation Variants ── */
 
 const fadeUp = (delay = 0) => ({
   hidden: {
@@ -83,9 +81,7 @@ const ctaVariant = (delay = 0) => ({
   },
 })
 
-/* ──────────────────────────────────────────────────────────────
-   Theme
-────────────────────────────────────────────────────────────── */
+/* ── Theme ─ */
 
 const themes: Record<
   Service['theme'],
@@ -285,7 +281,7 @@ export default function ServicesBento() {
     >
       <div className="max-w-[1240px] mx-auto px-5 sm:px-8">
 
-        {/* ── Header ───────────────────────────────────────────── */}
+        {/* ── Header ── */}
 
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
 
@@ -347,7 +343,7 @@ export default function ServicesBento() {
 
         </div>
 
-        {/* ── Bento Grid ──────────────────────────────────────── */}
+        {/* ── Bento Grid ── */}
 
         <div className="bento-grid">
           {SERVICES.map((service, index) => (

@@ -24,7 +24,7 @@ export default function Nav() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
-  /* On the home page the nav starts transparent over the hero image */
+  /*nav transparent */
   const isTransparent = isHome && !scrolled && !menuOpen
   const navBg = isTransparent
     ? 'bg-transparent'

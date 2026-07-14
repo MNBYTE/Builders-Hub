@@ -25,7 +25,7 @@ const cardVariant = (delay = 0) => ({
   },
 })
 
-/* ── Animated section wrapper ────────────────────────────────────────── */
+/* ── Animated section wrapper ──── */
 function InViewSection({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref    = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
@@ -37,7 +37,7 @@ function InViewSection({ children, className }: { children: React.ReactNode; cla
   )
 }
 
-/* ── Project card ────────────────────────────────────────────────────── */
+/* ── Project card ──── */
 function ProjectCard({ project, index, inView }: {
   project: typeof PROJECTS[number]
   index:   number
@@ -55,7 +55,7 @@ function ProjectCard({ project, index, inView }: {
       style={{ boxShadow: '0 2px 8px rgba(0,0,0,.04)' }}
       whileHover={{ y: -5, boxShadow: '0 20px 56px rgba(26,95,255,.11)', transition: { duration: 0.25 } }}
     >
-      {/* ── Preview area ───────────────────────────────────────── */}
+      {/* ── Preview area ─── */}
       <div className="relative h-56 flex-shrink-0 overflow-hidden" style={{ background: project.bg }}>
 
         {/* Subtle grid overlay */}
@@ -115,7 +115,7 @@ function ProjectCard({ project, index, inView }: {
         </div>
       </div>
 
-      {/* ── Card body ──────────────────────────────────────────── */}
+      {/* ── Card body ── */}
       <div className="p-6 flex flex-col flex-1">
         {/* Name + type */}
         <div className="mb-3">
@@ -171,7 +171,7 @@ function ProjectCard({ project, index, inView }: {
   )
 }
 
-/* ── Page ────────────────────────────────────────────────────────────── */
+/* ── Page ── */
 export default function ProjectsPage() {
   /* Header section */
   const headerRef    = useRef(null)
@@ -190,7 +190,7 @@ export default function ProjectsPage() {
       <Nav />
       <main className="bg-base">
 
-        {/* ══ Page header ═══════════════════════════════════════════ */}
+        {/* ══ Page header ═══ */}
         <section className="bg-ink pt-[70px] relative overflow-hidden">
           {/* Background orbs */}
           <div className="absolute rounded-full pointer-events-none" style={{ width:600, height:600, top:-200, right:-150, background:'#1A5FFF', opacity:.06, filter:'blur(60px)' }} />
@@ -245,7 +245,7 @@ export default function ProjectsPage() {
           <div className="h-12 bg-gradient-to-b from-ink to-base" />
         </section>
 
-        {/* ══ Filter hint (visual only) ══════════════════════════════ */}
+        {/* ══ Filter hint (visual only) ════ */}
         <section className="pt-14 pb-2">
           <motion.div
             ref={gridRef}
@@ -274,7 +274,7 @@ export default function ProjectsPage() {
           </motion.div>
         </section>
 
-        {/* ══ Project grid ══════════════════════════════════════════ */}
+        {/* ══ Project grid ════════ */}
         <section className="py-10 pb-24">
           <div className="max-w-[1240px] mx-auto px-5 sm:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -290,7 +290,7 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* ══ CTA ═══════════════════════════════════════════════════ */}
+        {/* ══ CTA ═════ */}
         <section className="pb-20 px-4 sm:px-8" ref={ctaRef}>
           <motion.div
             initial={{ opacity: 0, y: 40, filter: 'blur(12px)' }}

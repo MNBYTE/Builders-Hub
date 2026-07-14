@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
 
-      {/* ── Background image ──────────────────────────────────────── */}
+      {/* ── Background image ─ */}
       <div className="absolute inset-0 z-0">
         {/* Plain <img> avoids next/image hostname config entirely */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="dot-grid absolute inset-0 opacity-25" />
       </div>
 
-      {/* ── Main content ──────────────────────────────────────────── */}
+      {/* ── Main content ─ */}
       <div className="relative z-10 flex-1 flex items-center pt-[70px]">
         <div className="max-w-[1240px] mx-auto px-5 sm:px-8 w-full py-16 sm:py-20 lg:py-28">
 

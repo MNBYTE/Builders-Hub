@@ -5,10 +5,10 @@ import { motion, useInView, cubicBezier } from 'framer-motion'
 import Nav    from '../components/Nav'
 import Footer from '../components/Footer'
 import { TEAM } from '../data/constants'
-import { ArrowUpRight, Building2, CodeXml, Mail, MessageCircle, ScanFace, Search, Sparkles, Target, Zap } from 'lucide-react'
+import { ArrowUpRight, Building2, CodeXml, Mail, MessageCircle, ScanFace, Search, Target, Zap } from 'lucide-react'
 
 
-/* ── Animation helpers ──────────────────────────────────────────────── */
+/* ── Animation helpers ─── */
 const easeCustom = cubicBezier(0.16, 1, 0.3, 1)
 
 const fadeUp = (delay = 0) => ({
@@ -43,7 +43,7 @@ const cardVariant = (delay = 0) => ({
   },
 })
 
-/* ── Values strip data ───────────────────────────────────────────────── */
+/* ── Values strip data ─── */
 const VALUES = [
   { Icon: Target, title: 'Ownership',    body: 'We treat every project like it\'s our own product on the line.'       },
   { Icon: Search, title: 'Craft',        body: 'Details that most people won\'t notice but everyone will feel.'      },
@@ -51,7 +51,7 @@ const VALUES = [
   { Icon: Zap, title: 'Speed',        body: 'We move fast without cutting corners. Momentum matters.'               },
 ]
 
-/* ── Member card ─────────────────────────────────────────────────────── */
+/* ── Member card ─── */
 function MemberCard({
   member, index, inView,
 }: {
@@ -136,7 +136,7 @@ function MemberCard({
   )
 }
 
-/* ── Page ────────────────────────────────────────────────────────────── */
+/* ── Page ───────── */
 export default function TeamClient() {
   const headerRef  = useRef(null)
   const valuesRef  = useRef(null)
@@ -153,7 +153,7 @@ export default function TeamClient() {
       <Nav />
       <main className="bg-base">
 
-        {/* ══ Hero header ═══════════════════════════════════════════ */}
+        {/* ══ Hero header ═══ */}
         <section className="bg-ink pt-[70px] relative overflow-hidden">
 
           {/* Orbs */}
@@ -232,7 +232,7 @@ export default function TeamClient() {
           <div className="h-12 bg-gradient-to-b from-ink to-base" />
         </section>
 
-        {/* ══ Values strip ══════════════════════════════════════════ */}
+        {/* ══ Values strip ════ */}
         <section className="py-16 sm:py-20 border-b border-edge" ref={valuesRef}>
           <div className="max-w-[1240px] mx-auto px-5 sm:px-8">
 
@@ -261,7 +261,7 @@ export default function TeamClient() {
           </div>
         </section>
 
-        {/* ══ Team grid ═════════════════════════════════════════════ */}
+        {/* ══ Team grid ════════ */}
         <section className="py-20 sm:py-28">
           <div className="max-w-[1240px] mx-auto px-5 sm:px-8">
 
@@ -295,7 +295,7 @@ export default function TeamClient() {
           </div>
         </section>
 
-        {/* ══ Culture quote ═════════════════════════════════════════ */}
+        {/* ══ Culture quote ═══ */}
         <section className="bg-subtle py-16 sm:py-20 border-t border-edge">
           <div className="max-w-[860px] mx-auto px-5 sm:px-8 text-center">
             <motion.div
@@ -331,7 +331,7 @@ export default function TeamClient() {
           </div>
         </section>
 
-        {/* ══ Hiring banner ═════════════════════════════════════════ */}
+        {/* ══ Hiring banner ═══ */}
         <section className="py-20 px-4 sm:px-8" ref={hiringRef}>
           <motion.div
             initial={{ opacity: 0, y: 40, filter: 'blur(12px)' }}
